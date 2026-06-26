@@ -8,6 +8,8 @@ export const MEMBERS: Member[] = [
     clients: ["ホワイトエッセンス", "西武フィットネス"],
     eval_current: "A", eval_prev: "A",
     goal: "チーム全体のCPA改善率20%向上をリード",
+    result: "担当3社のCPAを平均18%改善。1社は目標超えの27%改善を達成。チームPDCA体制の整備も完了。",
+    achievement: "概ね達成",
   },
   {
     id: "m02", name: "宮嶋 裕太", unit: "第1ユニット", role: "メンバー", grade: "3年目",
@@ -15,6 +17,8 @@ export const MEMBERS: Member[] = [
     clients: ["サンワカンパニー", "静岡銀行"],
     eval_current: "B", eval_prev: "B",
     goal: "SEO施策の自走化・月次レポート品質向上",
+    result: "月次レポートのフォーマット整備完了。SEO施策は一部自走化できたが、コンテンツ制作速度が課題で流入改善は+12%に留まった。",
+    achievement: "一部達成",
   },
   {
     id: "m03", name: "渋谷 祐己", unit: "第1ユニット", role: "メンバー", grade: "2年目",
@@ -22,6 +26,8 @@ export const MEMBERS: Member[] = [
     clients: ["アニコム", "ライフフォワード"],
     eval_current: "B", eval_prev: "C",
     goal: "クリエイティブABテストの設計スキル習得",
+    result: "ABテスト設計を独力で実施できるようになり、アニコムでCTR+34%を記録。前期Cからの大幅成長。",
+    achievement: "達成",
   },
   {
     id: "m04", name: "栗原 有里", unit: "第1ユニット", role: "リーダー", grade: "5年目以上",
@@ -29,6 +35,8 @@ export const MEMBERS: Member[] = [
     clients: ["ホワイトエッセンス", "FANCL"],
     eval_current: "S", eval_prev: "A",
     goal: "MA×広告連携で顧客LTV最大化、新規受注2件",
+    result: "MA×広告連携の仕組みを2社に導入し、LTV+22%を実現。新規受注も3件獲得（目標超過）。",
+    achievement: "達成",
   },
   {
     id: "m05", name: "中山 佳祐", unit: "第1ユニット", role: "メンバー", grade: "3年目",
@@ -36,6 +44,8 @@ export const MEMBERS: Member[] = [
     clients: ["パーソルテンプスタッフ", "相川メディカル"],
     eval_current: "A", eval_prev: "B",
     goal: "コンテンツSEOと広告の統合戦略立案",
+    result: "統合戦略の提案書を作成し採用。コンテンツ経由のCVが前期比+40%。広告CPAも15%改善。",
+    achievement: "達成",
   },
   {
     id: "m06", name: "松田 真鈴", unit: "第1ユニット", role: "リーダー", grade: "4年目",
@@ -43,6 +53,8 @@ export const MEMBERS: Member[] = [
     clients: ["船場", "武蔵コーポレーション", "公文"],
     eval_current: "A", eval_prev: "A",
     goal: "不動産業界向け事例の横展開・提案力強化",
+    result: "不動産特化の提案テンプレートを社内展開。公文の新規施策受注に貢献。横展開事例2件実現。",
+    achievement: "達成",
   },
   {
     id: "m07", name: "新宮 未佑稀", unit: "第1ユニット", role: "リーダー", grade: "4年目",
@@ -50,6 +62,8 @@ export const MEMBERS: Member[] = [
     clients: ["持田ヘルスケア", "JRA", "TKP"],
     eval_current: "A", eval_prev: "B",
     goal: "医療・ヘルスケア業界の専門知識強化",
+    result: "薬機法対応の広告審査フローを整備し社内ガイドを作成。JRAでCPA-28%を達成。知識習得◎。",
+    achievement: "達成",
   },
   {
     id: "m08", name: "大植 直人", unit: "第1ユニット", role: "リーダー", grade: "5年目以上",
@@ -57,6 +71,8 @@ export const MEMBERS: Member[] = [
     clients: ["エスプール", "JA共済", "セコム"],
     eval_current: "S", eval_prev: "S",
     goal: "DX案件拡大・大手BtoB企業3社の深耕",
+    result: "3社全社でアップセル成功。セコムにDXコンサル案件を新規受注（月150万円）。DX領域の旗手として社内外から評価。",
+    achievement: "達成",
   },
   {
     id: "m09", name: "三木 竹士", unit: "第1ユニット", role: "リーダー", grade: "4年目",
@@ -64,6 +80,8 @@ export const MEMBERS: Member[] = [
     clients: ["ジャストシステム", "Z会"],
     eval_current: "A", eval_prev: "A",
     goal: "LLMO施策の社内ナレッジ化と外部提案展開",
+    result: "LLMOナレッジをNotionで体系化し全社共有。外部提案では2社でLLMO施策の受注に成功。",
+    achievement: "達成",
   },
   {
     id: "m10", name: "野口 太豪", unit: "第1ユニット", role: "リーダー", grade: "4年目",
@@ -71,6 +89,8 @@ export const MEMBERS: Member[] = [
     clients: ["積水ハウス不動産", "マース", "Kenvue"],
     eval_current: "A", eval_prev: "A",
     goal: "クリエイティブ×データ分析の案件横展開",
+    result: "Kenvueでクリエイティブ改善によりCTR+85%。横展開は1社に留まり目標の2社には未達。",
+    achievement: "概ね達成",
   },
 
   // ── 第2ユニット ──────────────────────────────────────
@@ -80,6 +100,8 @@ export const MEMBERS: Member[] = [
     clients: ["ビデオリサーチ", "ふくおかFG"],
     eval_current: "A", eval_prev: "A",
     goal: "金融・メディア業界での専門プレゼンス確立",
+    result: "金融・メディア向け提案資料の整備完了。ふくおかFGでの契約継続・拡大を実現。業界セミナー登壇1回。",
+    achievement: "達成",
   },
   {
     id: "m12", name: "恒川 涼至", unit: "第2ユニット", role: "リーダー", grade: "4年目",
@@ -87,6 +109,8 @@ export const MEMBERS: Member[] = [
     clients: ["JA共済", "エスプール"],
     eval_current: "A", eval_prev: "B",
     goal: "MA活用提案の標準化・提案勝率向上",
+    result: "MA提案テンプレートを作成し、提案勝率が前期比+15ポイント向上。エスプールで追加受注も実現。",
+    achievement: "達成",
   },
   {
     id: "m13", name: "今村 樹", unit: "第2ユニット", role: "リーダー", grade: "4年目",
@@ -94,6 +118,8 @@ export const MEMBERS: Member[] = [
     clients: ["エトワール海渡", "セコムTSS", "UTエイム"],
     eval_current: "B", eval_prev: "B",
     goal: "EC×人材業界のマルチチャネル設計力向上",
+    result: "UTエイムでマルチチャネル施策を実装。ただしEC案件（エトワール）では成果が横ばいで課題残存。",
+    achievement: "一部達成",
   },
   {
     id: "m14", name: "西島", unit: "第2ユニット", role: "リーダー", grade: "5年目以上",
@@ -101,6 +127,8 @@ export const MEMBERS: Member[] = [
     clients: ["マイナビ", "IBJ", "八木橋"],
     eval_current: "A", eval_prev: "A",
     goal: "婚活・求人業界への特化提案パッケージ化",
+    result: "IBJ向け婚活特化パッケージを完成・社内展開。マイナビとIBJの両社でCPA改善。",
+    achievement: "達成",
   },
   {
     id: "m15", name: "太田", unit: "第2ユニット", role: "リーダー", grade: "4年目",
@@ -108,6 +136,8 @@ export const MEMBERS: Member[] = [
     clients: ["UTグループ", "セブンイレブン"],
     eval_current: "B", eval_prev: "A",
     goal: "大手小売・人材業界での継続成果創出",
+    result: "UTグループは成果継続も、セブンイレブン案件で施策変更の影響を受け一時的に数値悪化。対応策を検討中。",
+    achievement: "一部達成",
   },
   {
     id: "m16", name: "竹平 圭初", unit: "第2ユニット", role: "リーダー", grade: "3年目",
@@ -115,6 +145,8 @@ export const MEMBERS: Member[] = [
     clients: ["ALLCONECT", "ヨシケイ"],
     eval_current: "B", eval_prev: "B",
     goal: "コンテンツSEOと広告の統合提案への挑戦",
+    result: "統合提案の提案書作成は完了。ヨシケイで試験的に実施も、まだ成果として数値化できていない段階。",
+    achievement: "評価中",
   },
   {
     id: "m17", name: "中 翔吾", unit: "第2ユニット", role: "リーダー", grade: "4年目",
@@ -122,6 +154,8 @@ export const MEMBERS: Member[] = [
     clients: ["ファナティクス", "ニチレイ", "東急リバブル"],
     eval_current: "A", eval_prev: "B",
     goal: "スポーツ×食品業界のクリエイティブ強化",
+    result: "ファナティクスでクリエイティブ全面刷新し、CTR+62%・CVR+18%を達成。ニチレイも改善傾向。",
+    achievement: "達成",
   },
   {
     id: "m18", name: "土屋 俊輔", unit: "第2ユニット", role: "メンバー", grade: "3年目",
@@ -129,6 +163,8 @@ export const MEMBERS: Member[] = [
     clients: ["セイバン", "SUBARU"],
     eval_current: "B", eval_prev: "C",
     goal: "自動車・子ども用品のLP改善施策強化",
+    result: "セイバンLPをリニューアルしCVR+22%を達成。SUBARU案件は予算調整で施策開始が遅れ、成果は来期持ち越し。",
+    achievement: "一部達成",
   },
   {
     id: "m19", name: "年永 実", unit: "第2ユニット", role: "リーダー", grade: "5年目以上",
@@ -136,6 +172,8 @@ export const MEMBERS: Member[] = [
     clients: ["西武フィットネス", "Braze", "マイナビ"],
     eval_current: "S", eval_prev: "A",
     goal: "MA/Brazeの深耕と社内教育担当として貢献",
+    result: "Braze活用の社内勉強会を4回開催・参加30名超。西武フィットネスでMA連動で会員継続率+8%。社内MA教育の礎を構築。",
+    achievement: "達成",
   },
   {
     id: "m20", name: "木村 達輝", unit: "第2ユニット", role: "リーダー", grade: "5年目以上",
@@ -143,6 +181,8 @@ export const MEMBERS: Member[] = [
     clients: ["アデコ", "明治", "三菱地所", "積水ハウス不動産"],
     eval_current: "S", eval_prev: "S",
     goal: "大手4社の継続深耕と新規アップセル2件",
+    result: "4社全社の契約継続・拡大。アップセル3件達成（目標超過）。明治では新サービス領域の受注にも成功。",
+    achievement: "達成",
   },
 
   // ── 第3ユニット ──────────────────────────────────────
@@ -152,6 +192,8 @@ export const MEMBERS: Member[] = [
     clients: ["セシール", "西宮敬愛会", "はなまる"],
     eval_current: "A", eval_prev: "A",
     goal: "EC×医療系SNS施策の事例横展開",
+    result: "SNS施策の事例を社内共有し、他チームへの横展開2件実現。セシールSNS投稿のエンゲージ率+45%。",
+    achievement: "達成",
   },
   {
     id: "m22", name: "角田 誠之助", unit: "第3ユニット", role: "リーダー", grade: "4年目",
@@ -159,6 +201,8 @@ export const MEMBERS: Member[] = [
     clients: ["三井住友信託", "テックオーシャン", "Lime"],
     eval_current: "A", eval_prev: "B",
     goal: "LLMO/AIO提案の業界別テンプレート整備",
+    result: "金融・SaaS・モビリティの3業界向けLLMOテンプレートを完成。テックオーシャンで初のAIO施策受注を達成。",
+    achievement: "達成",
   },
   {
     id: "m23", name: "岩本 公典", unit: "第3ユニット", role: "リーダー", grade: "4年目",
@@ -166,6 +210,8 @@ export const MEMBERS: Member[] = [
     clients: ["三井住友F&L", "読売ジャイアンツ", "SHIFT AI"],
     eval_current: "A", eval_prev: "A",
     goal: "AI企業向け提案パッケージの構築",
+    result: "SHIFT AI向け提案パッケージ完成。AI業界の参入障壁・訴求軸を整理した資料が社内で活用されている。",
+    achievement: "達成",
   },
   {
     id: "m24", name: "吉田 拓哉", unit: "第3ユニット", role: "リーダー", grade: "3年目",
@@ -173,6 +219,8 @@ export const MEMBERS: Member[] = [
     clients: ["マイナビ", "タカラトミー", "第四北越銀行"],
     eval_current: "B", eval_prev: "B",
     goal: "金融×玩具の異業種クロス提案力の開発",
+    result: "各業種の個別最適は進んだが、クロス活用の提案は1件に留まった。来期への継続課題として設定済み。",
+    achievement: "一部達成",
   },
   {
     id: "m25", name: "杉原 崇元", unit: "第3ユニット", role: "リーダー", grade: "4年目",
@@ -180,6 +228,8 @@ export const MEMBERS: Member[] = [
     clients: ["マイナビ", "明治", "ファナティクス"],
     eval_current: "A", eval_prev: "B",
     goal: "コンテンツ×SEO統合案件の案件単価向上",
+    result: "マイナビとの統合案件が月額+30万円に拡大。平均案件単価が前期比+22%向上。目標達成。",
+    achievement: "達成",
   },
   {
     id: "m26", name: "西山 修斗", unit: "第3ユニット", role: "リーダー", grade: "3年目",
@@ -187,6 +237,8 @@ export const MEMBERS: Member[] = [
     clients: ["ハルメク", "セコム", "日本交通", "イングリウッド"],
     eval_current: "B", eval_prev: "C",
     goal: "LPO改善のPDCAサイクル短縮化",
+    result: "PDCAを週次→3日次に短縮化成功。ハルメクでCVR+28%を達成。前期Cから確実な成長を遂げた。",
+    achievement: "達成",
   },
 
   // ── アソシエイト ──────────────────────────────────────
@@ -196,6 +248,8 @@ export const MEMBERS: Member[] = [
     clients: ["ネオファースト生命", "インターファクトリー", "アイン薬局"],
     eval_current: "B", eval_prev: "未評価",
     goal: "広告運用の基礎習得・月次レポート自走",
+    result: "月次レポートを3ヶ月連続で自走提出。広告運用の基礎操作を習得。数値分析の深さはまだ成長余地あり。",
+    achievement: "概ね達成",
   },
   {
     id: "m28", name: "田中 萌愛", unit: "アソシエイト", role: "アソシエイト", grade: "1年目",
@@ -203,6 +257,8 @@ export const MEMBERS: Member[] = [
     clients: ["東京貿易テクノシステム", "KDDI"],
     eval_current: "B", eval_prev: "未評価",
     goal: "通信業界向け提案スキルの習得",
+    result: "KDDI案件を通じて通信業界の特性を習得。提案書の構成力は向上も、数値ロジックの部分は引き続き強化中。",
+    achievement: "概ね達成",
   },
   {
     id: "m29", name: "野瀬", unit: "アソシエイト", role: "アソシエイト", grade: "2年目",
@@ -210,6 +266,8 @@ export const MEMBERS: Member[] = [
     clients: ["OSK", "ZWEI", "JAバンク", "リンクアカデミー"],
     eval_current: "B", eval_prev: "B",
     goal: "多業種対応力の向上・提案書作成の自走化",
+    result: "4社異なる業種を担当し多業種対応力が向上。提案書の自走化は達成。品質の安定性が次の課題。",
+    achievement: "達成",
   },
   {
     id: "m30", name: "花岡 恭世", unit: "アソシエイト", role: "アソシエイト", grade: "2年目",
@@ -217,6 +275,8 @@ export const MEMBERS: Member[] = [
     clients: ["イトーキ", "マイナビクリエイター", "弁護士法人朝日中央"],
     eval_current: "A", eval_prev: "B",
     goal: "BtoB・士業向けLP制作スキルの専門化",
+    result: "弁護士法人向けLPをゼロから設計・制作し受注貢献。イトーキLPでCVR+31%。士業×BtoBの専門性が社内で認められた。",
+    achievement: "達成",
   },
 ];
 
@@ -248,4 +308,20 @@ export const GRADE_COLOR: Record<string, string> = {
   "3年目": "bg-yellow-50 text-yellow-600",
   "4年目": "bg-blue-50 text-blue-700",
   "5年目以上": "bg-indigo-50 text-indigo-700",
+};
+
+export const ACHIEVEMENT_COLOR: Record<string, string> = {
+  "達成":     "bg-green-100 text-green-700 border-green-200",
+  "概ね達成": "bg-blue-100 text-blue-700 border-blue-200",
+  "一部達成": "bg-yellow-100 text-yellow-700 border-yellow-200",
+  "未達":     "bg-red-100 text-red-700 border-red-200",
+  "評価中":   "bg-gray-100 text-gray-500 border-gray-200",
+};
+
+export const ACHIEVEMENT_ICON: Record<string, string> = {
+  "達成":     "✅",
+  "概ね達成": "🔵",
+  "一部達成": "🟡",
+  "未達":     "🔴",
+  "評価中":   "⏳",
 };

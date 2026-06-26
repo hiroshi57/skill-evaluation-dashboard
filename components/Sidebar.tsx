@@ -1,13 +1,14 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BarChart3, LayoutDashboard, Star, Users } from "lucide-react";
+import { BarChart3, LayoutDashboard, Star, UserPlus, Users } from "lucide-react";
 
 const NAV = [
-  { href: "/",        label: "ダッシュボード", icon: LayoutDashboard },
-  { href: "/members", label: "メンバー一覧",   icon: Users },
-  { href: "/skills",  label: "スキルマップ",   icon: BarChart3 },
-  { href: "/eval",    label: "評価管理",        icon: Star },
+  { href: "/",          label: "ダッシュボード", icon: LayoutDashboard },
+  { href: "/members",   label: "メンバー一覧",   icon: Users },
+  { href: "/skills",    label: "スキルマップ",   icon: BarChart3 },
+  { href: "/eval",      label: "評価管理",        icon: Star },
+  { href: "/register",  label: "メンバー登録",   icon: UserPlus },
 ];
 
 function cn(...classes: (string | false | undefined)[]) {
