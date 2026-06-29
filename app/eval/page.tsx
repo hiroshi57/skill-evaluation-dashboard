@@ -19,39 +19,87 @@ function trend(cur: EvalRating, prev: EvalRating) {
   return { icon: "→", color: "text-gray-400" };
 }
 
+function downloadEvalTxt(m: Member) {
+  const trendLabel = (rank[m.eval_current] ?? 0) > (rank[m.eval_prev] ?? 0) ? "↑ 上昇"
+    : (rank[m.eval_current] ?? 0) < (rank[m.eval_prev] ?? 0) ? "↓ 下降" : "→ 維持";
+  const lines = [
+    "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+    "　個人評価シート（1on1 用）",
+    "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+    "",
+    `氏名　　　: ${m.name}`,
+    `ユニット　: ${m.unit}`,
+    `ロール　　: ${m.role}`,
+    `年次　　　: ${m.grade}`,
+    "",
+    "【評価】",
+    `前期評価　: ${m.eval_prev}`,
+    `今期評価　: ${m.eval_current}　（${trendLabel}）`,
+    `達成度　　: ${ACHIEVEMENT_ICON[m.achievement]} ${m.achievement}`,
+    "",
+    "【今期目標】",
+    m.goal,
+    "",
+    "【実績・結果】",
+    m.result,
+    ...(m.memo ? ["", "【メモ・コメント】", m.memo] : []),
+    "",
+    "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+    `出力日: ${new Date().toLocaleDateString("ja-JP")}`,
+  ];
+  const blob = new Blob([lines.join("\n")], { type: "text/plain;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `評価_${m.name}_${new Date().toISOString().slice(0, 10)}.txt`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
 function GoalResultRow({ m }: { m: Member }) {
   const [open, setOpen] = useState(false);
   const t = trend(m.eval_current, m.eval_prev);
   return (
     <div className="border rounded-xl overflow-hidden bg-white">
       {/* サマリー行 */}
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full text-left px-4 py-3 hover:bg-gray-50 transition-colors"
-      >
-        <div className="flex items-center gap-3">
-          {/* 名前・ユニット */}
-          <div className="w-32 flex-shrink-0">
-            <p className="font-semibold text-sm text-gray-900">{m.name}</p>
-            <p className="text-xs text-gray-400">{m.unit}</p>
+      <div className="flex items-center">
+        <button
+          onClick={() => setOpen(!open)}
+          className="flex-1 text-left px-4 py-3 hover:bg-gray-50 transition-colors"
+        >
+          <div className="flex items-center gap-3">
+            {/* 名前・ユニット */}
+            <div className="w-32 flex-shrink-0">
+              <p className="font-semibold text-sm text-gray-900">{m.name}</p>
+              <p className="text-xs text-gray-400">{m.unit}</p>
+            </div>
+            {/* 年次 */}
+            <span className={cn("text-xs px-2 py-0.5 rounded-full flex-shrink-0", GRADE_COLOR[m.grade])}>{m.grade}</span>
+            {/* 達成度バッジ */}
+            <span className={cn("text-xs px-2 py-0.5 rounded-full border font-medium flex-shrink-0", ACHIEVEMENT_COLOR[m.achievement])}>
+              {ACHIEVEMENT_ICON[m.achievement]} {m.achievement}
+            </span>
+            {/* 評価推移 */}
+            <div className="flex items-center gap-1.5 flex-shrink-0">
+              <span className={cn("text-xs font-bold px-2 py-0.5 rounded-full", EVAL_COLOR[m.eval_prev])}>{m.eval_prev}</span>
+              <span className={cn("text-sm", t.color)}>{t.icon}</span>
+              <span className={cn("text-xs font-bold px-2 py-0.5 rounded-full", EVAL_COLOR[m.eval_current])}>{m.eval_current}</span>
+            </div>
+            {/* 目標（1行プレビュー） */}
+            <p className="text-xs text-gray-500 flex-1 truncate hidden md:block">{m.goal}</p>
+            <span className="text-xs text-gray-300 flex-shrink-0">{open ? "▲" : "▼"}</span>
           </div>
-          {/* 年次 */}
-          <span className={cn("text-xs px-2 py-0.5 rounded-full flex-shrink-0", GRADE_COLOR[m.grade])}>{m.grade}</span>
-          {/* 達成度バッジ */}
-          <span className={cn("text-xs px-2 py-0.5 rounded-full border font-medium flex-shrink-0", ACHIEVEMENT_COLOR[m.achievement])}>
-            {ACHIEVEMENT_ICON[m.achievement]} {m.achievement}
-          </span>
-          {/* 評価推移 */}
-          <div className="flex items-center gap-1.5 flex-shrink-0">
-            <span className={cn("text-xs font-bold px-2 py-0.5 rounded-full", EVAL_COLOR[m.eval_prev])}>{m.eval_prev}</span>
-            <span className={cn("text-sm", t.color)}>{t.icon}</span>
-            <span className={cn("text-xs font-bold px-2 py-0.5 rounded-full", EVAL_COLOR[m.eval_current])}>{m.eval_current}</span>
-          </div>
-          {/* 目標（1行プレビュー） */}
-          <p className="text-xs text-gray-500 flex-1 truncate hidden md:block">{m.goal}</p>
-          <span className="text-xs text-gray-300 flex-shrink-0">{open ? "▲" : "▼"}</span>
-        </div>
-      </button>
+        </button>
+        {/* DLボタン */}
+        <button
+          onClick={(e) => { e.stopPropagation(); downloadEvalTxt(m); }}
+          title="個人評価をTXTでダウンロード"
+          className="flex-shrink-0 flex items-center gap-1 px-3 py-1.5 mr-3 text-xs text-violet-600 border border-violet-200 rounded-lg hover:bg-violet-50 transition-colors"
+        >
+          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" /></svg>
+          DL
+        </button>
+      </div>
 
       {/* 展開：目標 → 結果 */}
       {open && (

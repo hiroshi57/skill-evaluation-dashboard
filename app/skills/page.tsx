@@ -1,11 +1,24 @@
-import { MEMBERS, SKILL_COLORS, EVAL_COLOR, GRADE_COLOR } from "@/lib/mock-data";
-import { Skill } from "@/types";
+"use client";
+import { useEffect, useState, useCallback } from "react";
+import { SKILL_COLORS, EVAL_COLOR, GRADE_COLOR } from "@/lib/mock-data";
+import { Member, Skill } from "@/types";
+import { loadMembers } from "@/lib/member-store";
 
 function cn(...c: (string | false | undefined)[]) { return c.filter(Boolean).join(" "); }
 
 const ALL_SKILLS: Skill[] = ["運用型広告", "SEO", "コンテンツ", "SNS", "CRO・LPO", "MA", "Web制作", "DXコンサル", "クリエイティブ", "調査・リサーチ", "LLMO/AIO"];
 
 export default function SkillsPage() {
+  const [members, setMembers] = useState<Member[]>([]);
+
+  const reload = useCallback(() => setMembers(loadMembers()), []);
+
+  useEffect(() => {
+    reload();
+    window.addEventListener("members_updated", reload);
+    return () => window.removeEventListener("members_updated", reload);
+  }, [reload]);
+
   return (
     <div className="space-y-6 max-w-5xl">
       <div>
@@ -15,7 +28,7 @@ export default function SkillsPage() {
 
       <div className="space-y-5">
         {ALL_SKILLS.map((skill) => {
-          const holders = MEMBERS.filter((m) => m.skills.includes(skill));
+          const holders = members.filter((m) => m.skills.includes(skill));
           return (
             <div key={skill} className="bg-white border rounded-xl overflow-hidden">
               <div className="flex items-center gap-3 px-5 py-3 border-b bg-gray-50">
